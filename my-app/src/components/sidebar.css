@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+
+.mobile-v{
+    @apply w-full text-left px-5 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-100 transition duration-200 ;
+}
+.side-desc {
+    @apply md:w-[200px] lg:w-[300px] md:py-4 md:px-5 md:bg-blue-100 md:font-bold md:text-nowrap md:text-[17px] md:border-b-1 md:border-gray-300;
+}

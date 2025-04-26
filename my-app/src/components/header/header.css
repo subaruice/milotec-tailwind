@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+.custom-menu-item {
+    @apply p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600;
+}

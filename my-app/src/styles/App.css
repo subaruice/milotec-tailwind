@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {    
+    --breakpoint-firsts: 355px;
+    --color-btn-buy: rgb(70, 209, 65);
+    --color-main: rgb(38, 39, 38);
+}
+
+*{
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+html{
+    @apply bg-gray-100 text-gray-900;
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 import { useState, Dispatch, SetStateAction } from "react";
-import Sidebar from "../Sidebar";
+import Sidebar from "../sidebar/Sidebar";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

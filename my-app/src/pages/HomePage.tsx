@@ -1,55 +1,43 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import ItemsList from "../components/ItemsList";
-import Header from "../components/header/Header";
-import { useFetch } from "../hooks/useFetch";
-import PostService from "../API/PostService";
 import Loader from "./../UI/Loader";
-import { Item } from "../types/types";
+import { LayoutContext } from "../types/types";
 import Error from "./../UI/Error";
-import Search from "./../components/Search";
 import useDebounce from "../hooks/useDebounce";
-import Sidebar from "../components/Sidebar";
+import { useOutletContext } from "react-router-dom";
+
+
 
 const HomePage = () => {
-    const [items, setItems] = useState<Item[]>([]);
-    const [searchValue, setSearchValue] = useState<string>("");
-    const debounceSearch = useDebounce(searchValue, 500);
-
-    const [fetch, isLoading, error] = useFetch(async () => {
-        const response = await PostService.GetAll();
-        setItems(response.data);
-    });
+    const context = useOutletContext<LayoutContext>();
+    if (!context) return <div>Loading...</div>;
+    const debounceSearch = useDebounce(context.searchValue, 500);
 
     const filtredSearch = useMemo(() => {
-        return items.filter((item) =>
+        return context.items.filter((item) =>
             item.title.toLowerCase().includes(debounceSearch)
         );
-    }, [items, debounceSearch]);
+    }, [context.items, debounceSearch]);
 
-    useEffect(() => {
-        fetch();
-    }, []);
-
-    if (error) {
+    if (context.error) {
         return (
             <Error
-                errorMessage={typeof error === "string" ? error : undefined}
+                errorMessage={
+                    typeof context.error === "string"
+                        ? context.error
+                        : undefined
+                }
             />
         );
     }
-    
-    
 
     return (
-        <div className="p-2.5 w-full h-full ">
-            <Header />
-            <Search setSearchValue={setSearchValue} searchValue={searchValue} />
-            <div className="flex justify-center gap-3">
-                <div className="hidden md:block">
-                    <Sidebar items={items}/>
-                </div>
-                {isLoading ? <Loader /> : <ItemsList items={filtredSearch} />}
-            </div>
+        <div>
+            {context.isLoading ? (
+                <Loader />
+            ) : (
+                <ItemsList items={filtredSearch} />
+            )}
         </div>
     );
 };

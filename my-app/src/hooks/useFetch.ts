@@ -13,7 +13,7 @@ type UseFetch = [
 
 type Callback = (params?: Params) => Promise<void>;
 
-export const useFetch = (callback:Callback):UseFetch => {
+export const useFetch = (callback?:Callback):UseFetch => {
     const [loading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
 

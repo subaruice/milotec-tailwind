@@ -1,9 +1,9 @@
-import {ItemsProps} from '../types/types'; 
+import {ItemsProps} from '../../types/types'; 
 import './sidebar.css'
 
 const Sidebar = ({items}: ItemsProps) => {
     return (
-        <div className="">
+        <div>
             <ul className="flex flex-col bg-white rounded-xl">
                 <h2 className="hidden md:block py-4 px-5  text-[18px] text-nowrap bg-red-500 text-white font-bold rounded-t-xl">
                     Каталог Skoda

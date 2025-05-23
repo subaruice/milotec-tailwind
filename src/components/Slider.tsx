@@ -1,4 +1,5 @@
 import  { useRef, useState, useEffect } from "react";
+import React from "react";
 
 const images = [
   "https://www.milotec.net/fotky72500/slider/Obr-1.png",
@@ -9,7 +10,7 @@ const images = [
   "https://www.milotec.net/fotky72500/slider/Obr-6.png",
 ];
 
-const Slider = () => {
+const Slider = React.memo(() => {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef<number | null>(null);
 
@@ -47,6 +48,6 @@ const Slider = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Slider;

@@ -1,7 +1,7 @@
-import {ItemsProps} from '../../types/types'; 
 import './sidebar.css'
+import React from 'react';
 
-const Sidebar = ({items}: ItemsProps) => {
+const Sidebar = React.memo(() => {
     return (
         <div>
             <ul className="flex flex-col bg-white rounded-xl">
@@ -26,6 +26,6 @@ const Sidebar = ({items}: ItemsProps) => {
             </ul>
         </div>
     );
-};
+});
 
 export default Sidebar;

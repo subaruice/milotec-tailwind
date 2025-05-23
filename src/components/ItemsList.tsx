@@ -1,8 +1,13 @@
-import ItemFromList from "./ItemFromList";
-import { ItemsProps } from "../types/types";
+import React from "react";
+import { Item } from "../types/types";
 import Slider from "./Slider";
+import ItemFromList from "./ItemFromList";
 
-const ItemsList = ({ items }: ItemsProps) => {
+interface ItemsProps {
+    items: Item[];
+}
+
+const ItemsList:React.FC<ItemsProps> = React.memo(({ items }) => {    
     return (
         <div className="flex flex-col gap-3" >
             <Slider/>
@@ -13,6 +18,6 @@ const ItemsList = ({ items }: ItemsProps) => {
             </div>
         </div>
     );
-};
+});
 
 export default ItemsList;

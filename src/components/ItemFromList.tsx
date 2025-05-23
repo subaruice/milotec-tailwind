@@ -1,7 +1,14 @@
-import { ItemProps } from "../types/types";
+import React from "react";
+import { Item } from "../types/types";
+
+interface ItemProps {
+    item: Item;
+}
 
 
-const ItemFromList = ({item}: ItemProps) => {
+const ItemFromList:React.FC<ItemProps> = React.memo(({item}) => {
+    console.log(item.id);
+    
     return (
         <div className="flex  flex-col bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all border-stone-100 border border-solid sm:w-[32%] firsts:w-[48%] р-auto gap-2">
                 <a className="flex justify-center">
@@ -27,6 +34,6 @@ const ItemFromList = ({item}: ItemProps) => {
             </div>
         </div>
     );
-};
+});
 
 export default ItemFromList;

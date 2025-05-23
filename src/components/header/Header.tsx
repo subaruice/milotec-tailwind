@@ -42,10 +42,7 @@ const Header = () => {
                 }`}
             >
                 <nav className="p-6 bg-white ">
-                    <a
-                        href="#"
-                        className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600"
-                    >
+                    <a href="#" className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600">
                         Главная
                     </a>
                     <div
@@ -58,19 +55,13 @@ const Header = () => {
                         {isSidebar && (
                             <div onClick={(e) => handleClick(e)}>
                                 <Sidebar />
-                            </div>    
+                            </div>
                         )}
                     </div>
-                    <a
-                        href="#"
-                        className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600"
-                    >
+                    <a href="#" className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600">
                         О нас
                     </a>
-                    <a
-                        href="#"
-                        className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600"
-                    >
+                    <a href="#" className="p-4 block text-xl border-b-1  text-gray-800 hover:text-blue-600">
                         Контакты
                     </a>
                 </nav>
@@ -82,29 +73,16 @@ const Header = () => {
                 />
             )}
             <a href="#">
-                <img
-                    className="rounded-xl"
-                    src="https://static.golemos.com/lukasdubina/milotec/img/logo.jpg"
-                    alt=""
-                />
+                <img className="rounded-xl" src="https://static.golemos.com/lukasdubina/milotec/img/logo.jpg" alt="" />
             </a>
-            <div className="hidden p-2 bg-white md:flex  rounded-xl overflow-hidden">
-                <a
-                    className="p-2 border-r-3 border-gray-300 bg-white text-gray-800 tracking-wide"
-                    href=""
-                >
+            <div className="hidden p-2 md:flex self-end text-[18px] rounded-xl overflow-hidden">
+                <a className="p-2 text-gray-800 tracking-wide" href="">
                     Главная
                 </a>
-                <a
-                    className="p-2 border-r-3 border-gray-300 bg-white text-gray-800 tracking-wide"
-                    href=""
-                >
+                <a className="p-2 text-gray-800 tracking-wide" href="">
                     О нас
                 </a>
-                <a
-                    className="p-2  bg-white text-gray-800 tracking-wide"
-                    href=""
-                >
+                <a className="p-2 text-gray-800 tracking-wide" href="">
                     Контакты
                 </a>
             </div>
